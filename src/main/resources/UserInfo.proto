@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+option java_package = "com.donews";
+option java_outer_classname = "UserInfoBuf";
+
+message UserInfo {
+  enum Gender {
+    GENDER_UNKNOWN = 0;
+    GENDER_MALE = 1;
+    GENDER_FEMALE = 2;
+  }
+  message TaobaoExtra {
+    string userid = 1;
+    string open_sid = 2;
+    string top_access_token = 3;
+    string avatar_url = 4;
+    string havana_sso_token = 5;
+    string nick = 6;
+    string open_id = 7;
+    string top_auth_code = 8;
+    string top_expire_time = 9;
+  }
+  message WechatExtra {
+    string access_token = 1;
+    int64 expiresIn = 2;
+    string refresh_token = 3;
+    string open_id = 4;
+    string scope = 5;
+    string nick_name = 6;
+    int32 sex = 7;
+    string province = 8;
+    string city = 9;
+    string country = 10;
+    string headimgurl = 11;
+    repeated string privilege = 12;
+    string unionid = 13;
+  }
+  uint64 id = 1;
+  string user_name = 2;
+  string wechat = 3;
+  string head_img = 4;
+  Gender gender = 5;
+  string birthday = 6;
+  string token = 7;
+  string third_party_id = 8;
+  bool is_new = 9;
+  WechatExtra wechat_extra = 10;
+  TaobaoExtra taobao_extra = 11;
+  string mobile = 12;
+  string invite_code = 13;
+  bool is_deleted = 14;
+  bool is_invited = 15;
+  string suuid = 16;
+  string created_at = 17;
+  string channel = 18;
+  string version_code = 19;
+  string package_name = 20;
+}
